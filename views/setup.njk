@@ -1,0 +1,43 @@
+<!doctype html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- this is a link to the css file -->
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+
+    <!-- title is a Nunjucks variable -->
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>Setup your Project Manager server!</h1>
+        <p> Provide your credentials </p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+            </div>
+            <div class="col-6">
+                <form action="usercreds">
+                    <div class="form-group">
+                        <label for="server-address">Server Address</label> <br>
+                        <input type="text" class="form-control" placeholder="Server address" id="sva" name="sva"> <br> <br>
+                        <label for="server-port">Server Address</label> <br>
+                        <input type="text" class="form-control" placeholder="3306" value="3306" id="svp" name="svp"> <br> <br>
+                        <label for="server-user">DB User</label> <br>
+                        <input type="text" class="form-control" placeholder="User" id="svu" name="svu"> <br> <br>
+                        <label for="server-passwd">DB Password</label> <br>
+                        <input type="password" class="form-control" placeholder="Password" id="svpw" name="svpw"><br> <br>
+                        <label for="server-passwd">DB to use</label> <br>
+                        <input type="text" class="form-control" value="ProjectManagement" id="dbase" name="dbase"><br> <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

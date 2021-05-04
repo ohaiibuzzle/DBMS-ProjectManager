@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="Description" content="Enter your description here" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Login</title>
+    </head>
+
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+</head>
+
+<body>
+    <div class="jumbotron text-center" style="padding:35px;">
+        <h1 class="h4">Log on</h1>
+        <h2 class="h6 text-info">If you have problem logging in, please contact your system administrator for support</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <form action="/api/login" id="login-form" method="POST">
+                    <div class="form-group">
+                        <label for="username" class="col-form-label"></label>
+                        <input name="username" type="text" class="form-control" id="username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="passwd" class="col-form-label"></label>
+                        <input name="passwd" type="password" class="form-control" id="passwd" placeholder="Password">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+</body>
+
+</html>
