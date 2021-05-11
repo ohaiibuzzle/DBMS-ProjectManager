@@ -136,6 +136,11 @@
         <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
+                <a class="nav-link" href="/home/changepasswd">Change Password</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
                 <a class="nav-link" href="/api/logout">Sign out</a>
             </li>
         </ul>
@@ -300,6 +305,7 @@
                 </div>
                 <table class="table table-hover">
                     <h6>Members:</h6>
+
                     <thead class="thead">
                         <tr>
                             <th>ID</th>
@@ -365,7 +371,7 @@
                                 <td>{{ tasks[i].TaskContent }}</td>
                                 <td>{{ tasks[i].FullName }}</td>
                                 {% if tasks[i].TaskAssignment %}
-                                <td></td>
+                                <td><a style='text-decoration: none;' href='/api/flagTask?action=release&taskid={{ tasks[i].TaskID  }}'>&uparrow;</a></td>
                                 {% else %}
                                 <td><a style='text-decoration: none;' href='/api/flagTask?action=take&taskid={{ tasks[i].TaskID  }}'>&downarrow;</a></td>
                                 {% endif %}

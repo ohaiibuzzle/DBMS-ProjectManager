@@ -140,6 +140,11 @@
         <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
+                <a class="nav-link" href="/home/changepasswd">Change Password</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
                 <a class="nav-link" href="/api/logout">Sign out</a>
             </li>
         </ul>
@@ -188,6 +193,45 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Team</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group mr-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#newMemberModal">Add Member</button>
+                            <div class="modal fade" id="newMemberModal" tabindex="-1" role="dialog" aria-labelledby="newMemberModal" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="newMemberModalLabel">New Member</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-content">
+                                            <form action="/api/new_user" method="POST" id="add-member-form" name="add-member-form">
+                                                <div class="form-group">
+                                                    <label for="new-member-name" class="col-form-label"> Name </label>
+                                                    <input name="memberName" type="text" class="form-control" id="new-member-name" placeholder="Someone">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="new-member-dob" class="col-form-label"> DOB </label>
+                                                    <input name="memberDOB" type="date" class="form-control" id="new-member-dob">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="new-member-intro" class="col-form-label"> Intro </label>
+                                                    <textarea name="memberIntro" type="text" class="form-control" id="new-member-intro" placeholder="Something"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="new-member-uname" class="col-form-label"> Username </label>
+                                                    <input name="newUName" type="text" class="form-control" id="new-member-uname" placeholder="username">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" form="add-member-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" id="add-member-form-submit-btn" form="add-member-form" class="btn btn-primary">Add Member</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="btn-group mr-2">
                             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
                             <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
