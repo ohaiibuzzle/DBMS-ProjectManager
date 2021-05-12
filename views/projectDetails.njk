@@ -204,19 +204,19 @@
                                             <form action="/api/add_issue" method="POST" id="add-issue-form" name="add-issue-form">
                                                 <div class="form-group">
                                                     <label for="project-id" class="col-form-label"> ProjectID </label>
-                                                    <input name="projectID" type="text" class="form-control" id="project-id" value="{{ ProjectID }}" disabled>
+                                                    <input name="ProjectID" type="text" class="form-control" id="project-id" value="{{ ProjectID }}" readonly>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="issue-name" class="col-form-label"> Issue </label>
-                                                    <input name="issueName" type="text" class="form-control" id="issue-name" placeholder="Some Issue">
+                                                    <input name="IssueName" type="text" class="form-control" id="issue-name" placeholder="Some Issue">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="issue-desc" class="col-form-label"> Issue Description </label>
                                                     <textarea name="IssueDesc" class="form-control" id="issue-desc" rows="5" placeholder="Some Description"></textarea>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="Issue-owner" class="col-form-label"> Issue Owner ID </label>
-                                                    <input name="issueOwner" type="number" class="form-control" id="issue-owner" value="{{ currentuid }}" disabled>
+                                                    <label for="issue-owner" class="col-form-label"> Issue Owner ID </label>
+                                                    <input name="IssueOwner" type="number" class="form-control" id="issue-owner" value="{{ currentuid }}" readonly>
                                                 </div>
                                             </form>
                                         </div>
@@ -242,17 +242,17 @@
                                             <form action="/api/add_member" method="POST" id="add-member-form" name="add-member-form">
                                                 <div class="form-group">
                                                     <label for="project-id" class="col-form-label"> ProjectID </label>
-                                                    <input name="projectID" type="text" class="form-control" id="project-id" value="{{ ProjectID }}" disabled>
+                                                    <input name="projectID" type="text" class="form-control" id="project-id" value="{{ ProjectID }}" readonly>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="issue-name" class="col-form-label"> Issue </label>
+                                                    <label for="issue-name" class="col-form-label"> Member ID </label>
                                                     <input name="memberID" type="number" class="form-control" id="member-id" placeholder="Some Member">
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" form="add-member-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" id="add-member-form-submit-btn" form="add-member-form" class="btn btn-primary">Add Issue to Project</button>
+                                            <button type="submit" id="add-member-form-submit-btn" form="add-member-form" class="btn btn-primary">Add Member to Project</button>
                                         </div>
                                     </div>
                                 </div>
@@ -269,18 +269,18 @@
                                             </button>
                                         </div>
                                         <div class="modal-content">
-                                            <form action="/api/add_member" method="POST" id="create-task-form" name="create-task-form">
+                                            <form action="/api/add_task" method="POST" id="create-task-form" name="create-task-form">
                                                 <div class="form-group">
                                                     <label for="project-id" class="col-form-label"> ProjectID </label>
-                                                    <input name="projectID" type="text" class="form-control" id="project-id" value="{{ ProjectID }}" disabled>
+                                                    <input name="projectID" type="text" class="form-control" id="project-id" value="{{ ProjectID }}" readonly>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="issue-name" class="col-form-label"> Task </label>
-                                                    <input name="memberID" type="number" class="form-control" id="member-id" placeholder="Name">
+                                                    <label for="task-name" class="col-form-label"> Task </label>
+                                                    <input name="taskName" type="text" class="form-control" id="member-id" placeholder="Name">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="issue-name" class="col-form-label"> Task Description </label>
-                                                    <textarea name="memberID" type="number" class="form-control" id="member-id" placeholder="Some Description"></textarea>
+                                                    <label for="task-desc" class="col-form-label"> Task Description </label>
+                                                    <textarea name="taskDesc" type="number" class="form-control" id="member-id" placeholder="Some Description"></textarea>
                                                 </div>
                                             </form>
                                         </div>

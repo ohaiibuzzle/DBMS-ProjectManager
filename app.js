@@ -4,14 +4,13 @@ const nunjucks = require('nunjucks')
 const path = require('path')
 const session = require('express-session')
 const bodyParser = require('body-parser')
+const FileStore = require('session-file-store')(session);
+
+
 //const sassMiddleware = require('node-sass-middleware')
 const fs = require('fs')
 
 var rtdata = "./rtdata"
-
-if (!fs.existsSync(rtdata)) {
-    fs.mkdirSync(rtdata)
-}
 
 let app = express()
 
@@ -36,14 +35,28 @@ app.get('/', function(req, res, next) {
     res.render('index.njk', data)
 })
 
+if (!fs.existsSync('./rtdata/')) {
+    fs.mkdirSync('./rtdata')
+} else {
+    const fileStoreOptions = {
+        path: './rtdata/sessions'
+    };
+
+    app.use(session({
+        store: new FileStore(fileStoreOptions),
+        secret: 'tmEzPDZ91wNL8BqgVLfKpd1RpBa6PVQxqkYYutYL',
+        resave: true,
+        saveUninitialized: true,
+        cookie: {
+            maxAge: 864000
+        }
+    }))
+    app.use(require('./lib/home.js'))
+}
+
+
 // const setup = require('./lib/setup')
 app.use(require('./lib/setup'))
-app.use(require('./lib/home.js'))
-app.use(session({
-    secret: 'tmEzPDZ91wNL8BqgVLfKpd1RpBa6PVQxqkYYutYL',
-    resave: true,
-    saveUninitialized: true
-}))
 
 app.use(bodyParser.urlencoded({
     extended: true
